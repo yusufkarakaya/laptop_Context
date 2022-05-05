@@ -5,16 +5,16 @@ const CardContext = createContext();
 export function CardProvider({ children }) {
   const [items, setItems] = useState([]);
 
-  const addToCard = (name, price) => {
-    setItems((prevState) => [...prevState, { name, price }]);
+  const addToCart = (name, price) => {
+    setItems((prev) => [...prev, { name, price }]);
   };
 
-  const handleRemoveItem = (name) => {
+  const removeItem = (name) => {
     setItems(items.filter((item) => item.name !== name));
   };
 
   return (
-    <CardContext.Provider value={{ items, addToCard, handleRemoveItem }}>
+    <CardContext.Provider value={{ items, addToCart, removeItem }}>
       {children}
     </CardContext.Provider>
   );

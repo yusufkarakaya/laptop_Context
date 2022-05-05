@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -21,12 +22,21 @@ a {
 }
 
 header {
-  display: flex;
-  justify-content: space-evenly;
   background-color: #ee942559;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
   height: 110px;
   align-items: center;
   font-size: 2rem;
+  width: 1200px;
+  margin: auto;
+}
+
+header div div {
+  text-align: left;
 }
 
 .buttonCheckout {
@@ -37,6 +47,7 @@ header {
 .checkout {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.6rem;
 }
 .checkout span {
@@ -54,7 +65,7 @@ header {
 }
 
 .card {
-  min-width: 250px;
+  width: 250px;
   min-height: 250px;
 }
 
@@ -71,10 +82,12 @@ header {
 }
 
 .cardNameIcon {
-  display: flex;
+  display: inline-block;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
 .cardNameIcon svg {
   cursor: pointer;
+  font-size: 50px;
 }

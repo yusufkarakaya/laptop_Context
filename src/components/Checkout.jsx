@@ -1,30 +1,29 @@
-import React from 'react';
-import { useContext } from 'react';
-import CardContext from '../CardContext';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
+import CardContext from '../CardContext';
 
 function Checkout() {
   const { items } = useContext(CardContext);
-  const { handleRemoveItem } = useContext(CardContext);
+  const { removeItem } = useContext(CardContext);
 
   return (
     <Wrapper>
+      <div></div>
       <div>
-        <p>Contact Form</p>
-      </div>
-      <div>
-        {items.map((item) => {
-          return (
-            <Items>
-              <p>{item.name}</p>
-              <p>${item.price}</p>
-              <span onClick={() => handleRemoveItem(item.name)}>
-                <MdOutlineRemoveShoppingCart />
-              </span>
-            </Items>
-          );
-        })}
+        <div>
+          {items.map((product) => {
+            return (
+              <Items>
+                <p key={product.id}>{product.name}</p>
+                <p>{product.price}</p>
+                <span onClick={() => removeItem(product.name)}>
+                  <MdOutlineRemoveShoppingCart />
+                </span>
+              </Items>
+            );
+          })}
+        </div>
       </div>
     </Wrapper>
   );
@@ -32,9 +31,8 @@ function Checkout() {
 
 const Wrapper = styled.div`
   display: flex;
-  margin: 2rem 30rem;
-  justify-content: space-between;
-  min-width: 1000px;
+  margin: 2rem 20rem;
+  justify-content: space-evenly;
 
   p {
     font-size: 1.3rem;
@@ -55,6 +53,9 @@ const Items = styled.div`
   gap: 3rem;
   align-items: center;
   justify-content: flex-end;
+  p {
+    font-size: 1rem;
+  }
 `;
 
 export default Checkout;

@@ -9,15 +9,17 @@ function Nav() {
   return (
     <header>
       <div>
-        <Link to={'/'}>
-          <strong>Wear</strong>
-        </Link>
-      </div>
-      <div className='checkout'>
-        <Link to={'/checkout'}>
-          <IoBagCheckOutline className='buttonCheckout' />
-        </Link>
-        <span>{items.length}</span>
+        <div>
+          <Link to={'/'}>
+            <strong>NOTEBOOK</strong>
+          </Link>
+        </div>
+        <div className='checkout'>
+          <Link to={'/checkout'}>
+            <IoBagCheckOutline className='buttonCheckout' />
+          </Link>
+          <span>{items.length}</span>
+        </div>
       </div>
     </header>
   );
