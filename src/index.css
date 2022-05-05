@@ -23,15 +23,15 @@ a {
 
 header {
   background-color: #ee942559;
+  width: 100%;
 }
 
 header div {
   display: flex;
   justify-content: space-between;
-  height: 110px;
   align-items: center;
   font-size: 2rem;
-  width: 1200px;
+  min-height: 110px;
   margin: auto;
 }
 
